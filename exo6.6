@@ -1,0 +1,31 @@
+Random rand = new Random();
+     Scanner scanner = new Scanner(System.in);
+     int nbgene = rand.nextInt(100)+1;
+     int tentative=0;
+     final int maxtentative=10;
+     boolean haswon = false;
+     System.out.println("Devinez le nombre! Il est compris entre 1 et 100 ");
+      
+     while (tentative<maxtentative) {
+    	 System.out.println("Entrez votre proposition :");
+    	 int choix = scanner.nextInt();
+    	 tentative++;
+    	 if (choix>nbgene) {
+    		 System.out.println("le nombre est trop grand , réessayez ");
+    	 }
+    	 else if (choix<nbgene) {
+    		 System.out.println("le nombre est trop petit , réessayez ");
+    	 }
+    	 else {
+    		 haswon=true;
+    		 break;
+    	 }
+     }
+     if (haswon) {
+    	 System.out.println("Felicitation vous avez trouver le nombre en" +tentative+ "tentatives");
+     }
+     else {
+    	 System.out.println("Désolé vous avez utilisé toute vos tentatives.Le nombre était" +nbgene);
+     }
+     //Scanner.close();
+	    }
